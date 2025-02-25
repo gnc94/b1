@@ -1,0 +1,28 @@
+#include <graphics.h>
+#include <conio.h>
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int gd = DETECT, gm;
+    int poly[12] = {350, 450, 350, 410, 430, 400, 350, 350, 300, 430, 350, 450};
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+    
+    outtextxy(0, 0, "NAME ROLL - NO");
+    circle(100, 100, 50);
+    outtextxy(75, 170, "CIRCLE");
+    rectangle(200, 50, 350, 150);
+    outtextxy(240, 170, "RECTANGLE");
+    ellipse(500, 100, 0, 360, 100, 50);
+    outtextxy(480, 170, "ELLIPSE");
+    line(100, 250, 540, 250);
+    outtextxy(300, 260, "LINE");
+    sector(150, 400, 30, 300, 100, 50);
+    outtextxy(120, 460, "SECTOR");
+    drawpoly(6, poly);
+    outtextxy(340, 460, "POLYGON");
+    
+    getch();
+    closegraph();
+    return 0;
+}
