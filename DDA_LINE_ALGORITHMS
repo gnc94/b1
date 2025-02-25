@@ -1,0 +1,46 @@
+#include <graphics.h>
+#include <math.h>
+#include <conio.h>
+#include <iostream>
+#include <dos.h>
+
+using namespace std;
+
+main() {
+    int gd = DETECT, gm, i;
+    float x, y, x1, y1, x2, y2, dx, dy, delx, dely, length;
+
+    cout << endl << "NAME NO";
+    cout << endl << "Enter the coordinates of the starting point:";
+    cin >> x1 >> y1 >> x2 >> y2;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    dx = x2 - x1;
+    dy = y2 - y1;
+
+    if (dx >= dy) {
+        length = dx;
+    } else {
+        length = dy;
+    }
+
+    delx = dx / length;
+    dely = dy / length;
+
+    x = x1 + 0.5;
+    y = y1 + 0.5;
+
+    i = 1;
+    while (i <= length) {
+        putpixel(x, y, 5);
+        x = x + delx;
+        y = y + dely;
+        i += 1;
+        delay(50);
+    }
+
+    getch();
+    closegraph();
+    return 0;
+}
