@@ -1,0 +1,56 @@
+#include <graphics.h>
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int gd = DETECT, gm, i;
+    float r, x, y, xc, yc, p, d;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    cout << "NAME NO" << endl;
+
+    cout << "Enter the radius of the circle: ";
+    cin >> r;
+
+    cout << "Enter the center of the circle: ";
+    cin >> xc >> yc;
+
+    x = 0;
+    y = r;
+
+    d = 1.25 - r;
+
+    do {
+        putpixel(x + xc, y + yc, 10);
+        putpixel(y + xc, x + yc, 10);
+
+        putpixel(-x + xc, y + yc, 10);
+        putpixel(-y + xc, x + yc, 10);
+
+        putpixel(-x + xc, -y + yc, 10);
+        putpixel(-y + xc, -x + yc, 10);
+
+        putpixel(x + xc, -y + yc, 10);
+        putpixel(y + xc, -x + yc, 10);
+
+        if (d < 0) {
+            x = x + 1;
+            y = y;
+            d = d + 2 * x + 1;
+        } else {
+            x = x + 1;
+            y = y - 1;
+            d = d + 2 * (x - y) + 1;
+        }
+        delay(50);
+
+    } while (x < y);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
