@@ -5,7 +5,7 @@ int main() {
     int gd = DETECT, gm;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
-    outtextxy(100, 20, "Sameer Khan 39");
+    outtextxy(100, 20, "NAME NO");
     rectangle(150, 50, 400, 150);
     bar(150, 200, 400, 350);
 
