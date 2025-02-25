@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <conio.h>
+#include <graphics.h>
+
+void floodFill(int x, int y, int fill, int old);
+
+int midx = 319, midy = 239;
+
+int main() {
+    int gdriver = DETECT, gmode, x, y, r;
+    initgraph(&gdriver, &gmode, "C:\\TC\\BGI");
+
+    printf("Enter the Center of circle (x, y): ");
+    scanf("%d %d", &x, &y);
+
+    printf("Enter the Radius of circle: ");
+    scanf("%d", &r);
+
+    circle(midx + x, midy - y, r);
+    getch();
+
+    floodFill(midx + x, midy - y, 14, 0);
+    getch();
+
+    closegraph();
+    return 0;
+}
+
+void floodFill(int x, int y, int fill, int old) {
+    if (getpixel(x, y) == old) {
+        putpixel(x, y, fill);
+        delay(5);
+        floodFill(x + 1, y, fill, old);
+        floodFill(x - 1, y, fill, old);
+        floodFill(x, y + 1, fill, old);
+        floodFill(x, y - 1, fill, old);
+    }
+}
