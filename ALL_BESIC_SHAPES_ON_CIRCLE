@@ -1,0 +1,127 @@
+//A.CIRCLE IN THE CENTER OF THE SCREEN
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int x, y;
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    x = getmaxx() / 2;
+    y = getmaxy() / 2;
+
+    outtextxy(x - 100, 20, "NAME NO");
+    outtextxy(x - 100, 50, "ELLIPSE USING GRAPHICS IN C");
+    ellipse(x, y, 0, 360, 120, 60);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+//B.RECTANGLE USING BAR FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    outtextxy(100, 20, "NAME NO");
+    rectangle(150, 50, 400, 150);
+    bar(150, 200, 400, 350);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+//C.LINE USING LINE FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int x1 = 200, y1 = 200;
+    int x2 = 300, y2 = 300;
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    outtextxy(100, 20, "NAME NO");
+    line(x1, y1, x2, y2);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+//D.ELLIPSE USING ELLIPSE FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int x, y;
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    x = getmaxx() / 2;
+    y = getmaxy() / 2;
+
+    outtextxy(x - 100, 20, "NAME NO");
+    outtextxy(x - 100, 50, "ELLIPSE USING GRAPHICS IN C");
+    ellipse(x, y, 0, 360, 120, 60);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+//E.CONCENTRIC CIRCLE
+
+#include <graphics.h>
+#include <conio.h>
+#include <math.h>
+#include <stdio.h>
+
+main() {
+    int rc, rb, xc, yc, i;
+    float x, y;
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    outtextxy(100, 20, "NAME NO");
+
+    printf("Enter the radius of the outer circle\n");
+    scanf("%d", &rc);
+
+    printf("Enter the radius of the inner circle\n");
+    scanf("%d", &rb);
+
+    printf("Enter the center of the circle\n");
+    scanf("%d", &xc);
+    scanf("%d", &yc);
+
+    for (i = 1; i <= 360; i++) {
+        x = xc + (rb * (cos(i)));
+        y = yc + (rb * (sin(i)));
+        putpixel(x, y, 7);
+    }
+
+    for (i = 1; i <= 360; i++) {
+        x = xc + (rc * (cos(i)));
+        y = yc + (rc * (sin(i)));
+        putpixel(x, y, 7);
+    }
+
+    getch();
+    closegraph();
+
+    return 0;
+}
