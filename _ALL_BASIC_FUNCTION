@@ -1,0 +1,166 @@
+//A.ENLIST_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    outtext("Name Roll No:\n");
+    arc(100, 100, 0, 135, 50);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
+//B.DRAWPOLY_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    int points[] = {320, 150, 420, 300, 250, 300, 320, 150};
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    outtext("Name Roll No:\n");
+    drawpoly(4, points);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
+//C.CLOSE_GRAPH_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+
+    outtext("Name Roll No:\n");
+    outtext("Press any key to close the graph");
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
+//D.CIRCLE_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+
+    outtext("Name Roll No:\n");
+    circle(100, 100, 80);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
+//E.CLEAR_DEVICE_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+
+    outtext("Name Roll No:\n");
+    outtext("Press any key to close the graph");
+    getch();
+
+    cleardevice();
+    outtext("Press any key to edit");
+    getch();
+
+    closegraph();
+
+    return 0;
+}
+
+//F.FLOODFILL_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+
+    outtext("Name Roll No: \n");
+
+    setcolor(RED);
+    setfillstyle(SOLID_FILL, RED);
+    circle(100, 100, 80);
+    floodfill(100, 100, RED);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
+//G.GETPIXEL_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    char array[50];
+
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+
+    int color = getpixel(0, 0);
+    sprintf(array, "Color of pixel at (0, 0) = %d", color);
+
+    outtext(array);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
+//H.SET_COLOR_FUNCTION
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    circle(100, 100, 50);
+    setcolor(GREEN);
+    outtext("Name Roll No: \n");
+    circle(200, 200, 50);
+
+    getch();
+    closegraph();
+
+    return 0;
+}
+
